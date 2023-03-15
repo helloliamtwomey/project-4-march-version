@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Flask App</title>
+</head>
+<body>
+	<h1>Test Flask App</h1>
+	<form method="POST" action="http://127.0.0.1:5000/">
+		<label for="visit_reason">Visit Reason:</label>
+		<input type="text" name="visit_reason"><br>
+		<label for="symptoms">Symptoms:</label>
+		<input type="text" name="symptoms"><br>
+		<input type="submit" value="Submit">
+	</form>
+	<script>
+		// Submit the form using AJAX
+		var form = document.querySelector('form');
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', form.action);
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					var response = JSON.parse(xhr.responseText);
+					alert('Classification: ' + response.classification);
+				}
+			};
+			xhr.send(new FormData(form));
+		});
+	</script>
+</body>
+</html>

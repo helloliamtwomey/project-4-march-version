@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Health Questionnaire</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<h1>Health Questionnaire</h1>
+	<form method="post">
+		<div class="form-group">
+			<label for="visit_reason">Please describe the reason for your visit today and list the specific symptoms you are experiencing.</label>
+			<textarea class="form-control" id="visit_reason" name="visit_reason" required></textarea>
+		</div>
+		<div class="form-group">
+			<label for="symptoms">Please describe the symptoms you've been experiencing and how they've affected your daily life.</label>
+			<textarea class="form-control" id="symptoms" name="symptoms" required></textarea>
+		</div>
+		<div class="form-group">
+			<label for="symptom_duration">How long have you been experiencing these symptoms?</label>
+			<input type="text" class="form-control" id="symptom_duration" name="symptom_duration" required>
+		</div>
+		<div class="form-group">
+			<label for="symptom_severity">How severe are the symptoms? In terms of mild, moderate, or severe.</label>
+			<select class="form-control" id="symptom_severity" name="symptom_severity" required>
+				<option value="" disabled selected>Select severity level</option>
+				<option value="Mild">Mild</option>
+				<option value="Moderate">Moderate</option>
+				<option value="Severe">Severe</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="other_symptoms">Are there any other symptoms you are experiencing along with the main symptoms?</label>
+			<textarea class="form-control" id="other_symptoms" name="other_symptoms"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="past_medical_history">Do you have any past medical history or conditions that may be relevant to your symptoms?</label>
+			<textarea class="form-control" id="past_medical_history" name="past_medical_history"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="expectations">What are your expectations for your appointment today?</label>
+			<textarea class="form-control" id="expectations" name="expectations"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+</body>
+</html>
